@@ -5,7 +5,7 @@ import json
 
 
 # Set bot token
-bot = telebot.TeleBot("466884027:AAEbXLMoJOxOKcDh4OvxhSRh6pXzziUYHVY")
+bot = telebot.TeleBot("<token>")
 
 # Set translator
 translator = Translator()
@@ -22,7 +22,7 @@ def start(message):
 
 @bot.message_handler()
 def answer(message):
-    request = apiai.ApiAI('559a5401a1ab471ea756ff7cbc4fee09').text_request()  # Dialogflow access token
+    request = apiai.ApiAI('<token>').text_request()  # Dialogflow access token
     # Detect language of message
     try:
         lang = translator.detect(message.text).lang
